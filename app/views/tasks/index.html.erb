@@ -1,3 +1,13 @@
+<div class="flex gap-20">
+  <div class="font-bold text-xl mb-18 text-gray-400">
+    <%= link_to 'About', about_tasks_path, data: { turbo: false } %>
+  </div>
+
+  <div class="inline-block font-bold text-xl mb-18 text-gray-400 mr-6">
+    <%= link_to 'Other projects', other_projects_tasks_path %>
+  </div>
+</div>
+
 <% if notice.present? %>
   <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg border-l-6 inline-block" id="notice">
     <%= notice %>

@@ -44,6 +44,10 @@ class TasksController < ApplicationController
     redirect_to tasks_path, notice: "Task was successfully destroyed."
   end
 
+  def about; end
+
+  def other_projects; end
+
   private
 
   def task_params

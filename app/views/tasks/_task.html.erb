@@ -21,7 +21,7 @@
     </div>
   <% end %>
 
-  <%= link_to 'Edit', edit_task_path(task), class: "btn bg-gray-100 text-sm" %>
+  <%= link_to 'Edit', edit_task_path(task), class: "btn bg-gray-100 text-sm", data: { turbo: false} %>
   <div class="inline-block ml-2">
     <%= button_to "Delete", task_path(task),
                   method: :delete,
