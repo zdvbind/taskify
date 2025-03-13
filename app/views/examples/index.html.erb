@@ -1,0 +1,98 @@
+<!--Hello World in Stimulus-->
+<div class="font-bold text-xl text-gray-400">Example: Hello World in Stimulus</div>
+
+<div data-controller="hello" class="mb-8">
+  <input data-hello-target="name"
+         type="text"
+         class="inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none">
+  <button data-action="click->hello#greet" class="btn py-2 ml-2 bg-blue-500 text-white">Greet</button>
+</div>
+
+<!--Building Copy to Clipboard Button-->
+<div class="font-bold text-xl text-gray-400">Example: Copy To Clipboard</div>
+
+<div data-controller="clipboard" class="mb-8">
+  PIN: <input data-clipboard-target="source"
+              type="text"
+              value='I am a perfect number'
+              readonly
+              class="inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none" >
+  <button data-action="clipboard#copy" class="btn py-2 ml-2 bg-blue-500 text-white">Copy to clipboard</button>
+</div>
+
+<div class="font-bold text-xl text-gray-400">More than one instance of the clipboard controller on the page</div>
+
+<div data-controller="clipboard" class="mb-8">
+  PIN: <input data-clipboard-target="source"
+              type="text"
+              value="I am another perfect number"
+              readonly
+              class="inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none">
+  <button data-action="clipboard#copy" class="btn py-2 ml-2 bg-blue-500 text-white">Copy to Clipboard</button>
+</div>
+
+<div class="font-bold text-xl text-gray-400 ">Use other HTML elements like link/textarea (instead of button/input)</div>
+
+<div data-controller="clipboard" class="flex gap-2 py-2 items-center mb-8">
+  <div>PIN:</div>
+  <textarea rows="1  "
+                 data-clipboard-target="source"
+                 readonly
+                 class="block p-2.5 w-120 bg-gray-50 rounded-lg border border-gray-300">blabla</textarea>
+  <a href="#"
+     data-action="clipboard#copy"
+     class="block font-medium text-blue-600 dark:text-blue-500 hover:underline">Copy to Clipboard</a>
+</div>
+
+<!--CSS Classes-->
+<div class="font-bold text-xl text-gray-400 ">Example for Stimulus classes</div>
+
+<div data-controller="clipboard" data-clipboard-copied-class="bg-blue-300"
+     class="flex gap-2 py-2 items-center mb-8">
+  <div>PIN:</div>
+  <textarea rows="1  "
+            data-clipboard-target="source"
+            readonly
+            class="block p-2.5 w-120 bg-gray-50 rounded-lg border border-gray-300">blabla</textarea>
+  <a href="#"
+     data-action="clipboard#copy"
+     class="block font-medium text-blue-600 dark:text-blue-500 hover:underline">Copy to Clipboard</a>
+</div>
+
+<!--Stimulus#values-->
+<!--Managing State - Slideshow Controller-->
+<div class="font-bold text-xl text-gray-400 mb-2">Example for Stimulus values</div>
+
+<div data-controller="slideshow" data-slideshow-index-value="1">
+  <button data-action="slideshow#previous"> ← </button>
+  <button data-action="slideshow#next"> → </button>
+
+  <div data-slideshow-target="slide">🐵</div>
+  <div data-slideshow-target="slide">🙈</div>
+  <div data-slideshow-target="slide">🙉</div>
+  <div data-slideshow-target="slide">🙊</div>
+</div>
+
+<!--Working With External Resources - HTTP Requests and Timers-->
+<div class="font-bold text-xl text-gray-400 mt-4 mb-2">Working With External Resources</div>
+<div data-controller="content-loader"
+     data-content-loader-url-value="/messages.html"
+     data-content-loader-refresh-interval-value="5000"></div>
+
+<!--Action Parameters-->
+<div class="font-bold text-xl text-gray-400 mt-4 mb-2">
+  Using content-loader controller on multiple elements(Action Parameters)
+</div>
+
+<div data-controller="content-loader-for-multiple-elements">
+  <a href="#"
+     data-content-loader-for-multiple-elements-url-param="/messages.html"
+     data-action="content-loader-for-multiple-elements#load"
+     class="block font-medium text-blue-600 dark:text-blue-500 hover:underline">Messages
+  </a>
+  <a href="#"
+     data-content-loader-for-multiple-elements-url-param="/comments.html"
+     data-action="content-loader-for-multiple-elements#load"
+     class="block font-medium text-blue-600 dark:text-blue-500 hover:underline">Comments
+  </a>
+</div>
